@@ -33,7 +33,7 @@ System.register('matpompili/flarum-img-upload/main', ['flarum/extend', 'flarum/c
               { 'class': 'Button-label' },
               'Carica immagine'
             ),
-            m('input', { type: 'file', accept: 'image/*', capture: 'camera',
+            m('input', { type: 'file', accept: 'image/*',
               id: 'image-upload-input', name: 'image-upload-input' })
           ));
 

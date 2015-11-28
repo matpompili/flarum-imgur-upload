@@ -18,8 +18,7 @@ app.initializers.add('matpompili-flarum-img-upload', function() {
       <div class="Button hasIcon image-upload-button">
       <i class="icon fa fa-fw fa-upload Button-icon"></i>
       <span class="Button-label">Carica immagine</span>
-      <input type="file" accept="image/*" capture="camera"
-      id="image-upload-input" name="image-upload-input"></input>
+      <input type="file" accept="image/*" id="image-upload-input" name="image-upload-input"></input>
       </div>
     ));
 
