@@ -10,9 +10,9 @@
         "flarum-extension": {
             "title": "Image Upload",
             "icon": {
-                "image": "upload",
-                "backgroundColor": "#ddd",
-                "color": "#fff"
+                "name": "upload",
+                "backgroundColor": "#000",
+                "color": "#87d37c"
             }
         }
     }
