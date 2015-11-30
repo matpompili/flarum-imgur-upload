@@ -9,26 +9,8 @@
 
 import { extend } from 'flarum/extend';
 import app from 'flarum/app';
-import SettingsModal from 'flarum/components/SettingsModal';
 
-export default class ImageUploadSettingsModal extends SettingsModal {
-  className() {
-    return 'ImageUploadSettingsModal Modal--small';
-  }
-
-  title() {
-    return 'Image Upload Settings';
-  }
-
-  form() {
-    return [
-      <div className="Form-group">
-        <label>Imgur Client-ID</label>
-        <input className="FormControl" bidi={this.setting('matpompili.image-upload.imgur')}/>
-      </div>
-    ];
-  }
-}
+import ImageUploadSettingsModal from 'matpompili/flarum-img-upload/components/ImageUploadSettingsModal';
 
 app.initializers.add('matpompili-flarum-img-upload', app => {
   app.extensionSettings['matpompili-flarum-img-upload'] = () => app.modal.show(new ImageUploadSettingsModal());
