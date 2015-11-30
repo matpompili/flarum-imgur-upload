@@ -3,6 +3,13 @@
     "description": "Enable the upload of images directly from the composer",
     "version": "0.1.0",
     "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Matteo Pompili",
+        "email": "matpompili@gmail.com"
+      }
+    ],
     "require": {
         "flarum/core": "^0.1.0-beta.3"
     },
