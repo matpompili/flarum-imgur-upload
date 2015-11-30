@@ -27,14 +27,13 @@ System.register('matpompili/flarum-img-upload/main', ['flarum/extend', 'flarum/c
           items.add('image-upload', m(
             'div',
             { 'class': 'Button hasIcon image-upload-button' },
-            m('i', { 'class': 'icon fa fa-fw fa-upload Button-icon' }),
+            m('i', { 'class': 'icon fa fa-fw fa-paperclip Button-icon' }),
             m(
               'span',
               { 'class': 'Button-label' },
-              'Carica immagine'
+              'Allega'
             ),
-            m('input', { type: 'file', accept: 'image/*',
-              id: 'image-upload-input', name: 'image-upload-input' })
+            m('input', { type: 'file', accept: 'image/*', id: 'image-upload-input', name: 'image-upload-input' })
           ));
 
           if (this.props.preview) {
@@ -56,8 +55,10 @@ System.register('matpompili/flarum-img-upload/main', ['flarum/extend', 'flarum/c
               //$("#image_preview").attr("src", e.target.result);
               var icon = $(".image-upload-button > i");
               var buttonText = $(".image-upload-button > span.Button-label");
-              icon.removeClass('fa-upload').addClass('fa-spin fa-cog');
-              buttonText.text("Caricando...");
+              var submitButton = $(".item-submit > button");
+              icon.removeClass('fa-paperclip').addClass('fa-spin fa-circle-o-notch');
+              buttonText.text("Caricando");
+              submitButton.attr("disabled", true);
               $.ajax({
                 url: 'https://api.imgur.com/3/image',
                 headers: {
@@ -69,20 +70,26 @@ System.register('matpompili/flarum-img-upload/main', ['flarum/extend', 'flarum/c
                   'type': 'base64'
                 },
                 success: function success(response) {
-                  icon.removeClass('fa-spin fa-cog').addClass('fa-check green');
+                  icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-check green');
                   buttonText.text("Caricato!");
                   var linkString = '\n![alt text](' + response.data.link + ')\n';
                   textareaObj.insertAtCursor(linkString);
                   $("#image-upload-input").val("");
                   textareaObj.props.preview();
                   setTimeout(function () {
-                    icon.removeClass('fa-check green').addClass('fa-upload');
-                    buttonText.text("Carica immagine");
+                    submitButton.attr("disabled", false);
+                    icon.removeClass('fa-check green').addClass('fa-paperclip');
+                    buttonText.text("Allega");
                   }, 1000);
                 }, error: function error(response) {
                   icon.removeClass('fa-spin fa-cog').addClass('fa-times red');
                   buttonText.text("Errore");
                   console.log(response);
+                  setTimeout(function () {
+                    submitButton.attr("disabled", false);
+                    icon.removeClass('fa-times red').addClass('fa-paperclip');
+                    buttonText.text("Allega");
+                  }, 1000);
                 }
               });
             };
