@@ -1,4 +1,4 @@
-System.register('matpompili/flarum-img-upload/main', ['flarum/extend', 'flarum/components/TextEditor', 'flarum/components/Button'], function (_export) {
+System.register('matpompili/image-upload/main', ['flarum/extend', 'flarum/components/TextEditor', 'flarum/components/Button'], function (_export) {
   /*
   * This file is part of flarum-img-upload.
   *
@@ -22,7 +22,7 @@ System.register('matpompili/flarum-img-upload/main', ['flarum/extend', 'flarum/c
       Button = _flarumComponentsButton['default'];
     }],
     execute: function () {
-      app.initializers.add('matpompili-flarum-img-upload', function () {
+      app.initializers.add('matpompili-image-upload', function () {
         extend(TextEditor.prototype, 'controlItems', function (items) {
           items.add('image-upload', m(
             'div',

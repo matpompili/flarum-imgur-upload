@@ -2,7 +2,7 @@ var flarum = require('flarum-gulp');
 
 flarum({
   modules: {
-    'matpompili/flarum-img-upload': [
+    'matpompili/imgur-upload': [
       'src/**/*.js'
     ]
   }

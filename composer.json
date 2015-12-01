@@ -1,6 +1,6 @@
 {
-    "name": "matpompili/flarum-img-upload",
-    "description": "Enable the upload of images directly from the composer",
+    "name": "matpompili/imgur-upload",
+    "description": "Enable the upload of images to imgur directly from the composer",
     "version": "0.1.0",
     "type": "flarum-extension",
     "license": "MIT",
@@ -15,7 +15,7 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "Image Upload",
+            "title": "Imgur Upload",
             "icon": {
                 "name": "upload",
                 "backgroundColor": "#000",

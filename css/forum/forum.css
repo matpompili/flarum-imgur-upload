@@ -1,9 +1,9 @@
-.image-upload-button {
+.imgur-upload-button {
   overflow: hidden;
   position: relative;
 }
 
-.image-upload-button input {
+.imgur-upload-button input {
     position: absolute;
     top: 0;
     right: 0;

@@ -1,4 +1,4 @@
-System.register('matpompili/flarum-img-upload/components/ImageUploadSettingsModal', ['flarum/components/SettingsModal'], function (_export) {
+System.register('matpompili/image-upload/components/ImageUploadSettingsModal', ['flarum/components/SettingsModal'], function (_export) {
   'use strict';
 
   var SettingsModal, ImageUploadSettingsModal;
@@ -36,7 +36,7 @@ System.register('matpompili/flarum-img-upload/components/ImageUploadSettingsModa
                 null,
                 'Image Upload'
               ),
-              m('input', { className: 'FormControl', bidi: this.setting('matpompili.img-upload.imgur') })
+              m('input', { className: 'FormControl', bidi: this.setting('matpompili.image-upload.imgur') })
             )];
           }
         }]);
@@ -47,7 +47,7 @@ System.register('matpompili/flarum-img-upload/components/ImageUploadSettingsModa
     }
   };
 });;
-System.register('matpompili/flarum-img-upload/main', ['flarum/extend', 'flarum/app', 'matpompili/flarum-img-upload/components/ImageUploadSettingsModal'], function (_export) {
+System.register('matpompili/image-upload/main', ['flarum/extend', 'flarum/app', 'matpompili/image-upload/components/ImageUploadSettingsModal'], function (_export) {
   /*
   * This file is part of flarum-img-upload.
   *
@@ -65,13 +65,13 @@ System.register('matpompili/flarum-img-upload/main', ['flarum/extend', 'flarum/a
       extend = _flarumExtend.extend;
     }, function (_flarumApp) {
       app = _flarumApp['default'];
-    }, function (_matpompiliFlarumImgUploadComponentsImageUploadSettingsModal) {
-      ImageUploadSettingsModal = _matpompiliFlarumImgUploadComponentsImageUploadSettingsModal['default'];
+    }, function (_matpompiliImageUploadComponentsImageUploadSettingsModal) {
+      ImageUploadSettingsModal = _matpompiliImageUploadComponentsImageUploadSettingsModal['default'];
     }],
     execute: function () {
 
-      app.initializers.add('matpompili-flarum-img-upload', function (app) {
-        app.extensionSettings['matpompili-flarum-img-upload'] = function () {
+      app.initializers.add('matpompili-image-upload', function (app) {
+        app.extensionSettings['matpompili-image-upload'] = function () {
           return app.modal.show(new ImageUploadSettingsModal());
         };
       });
