@@ -1,15 +1,12 @@
-System.register('matpompili/image-upload/main', ['flarum/extend', 'flarum/components/TextEditor', 'flarum/components/Button'], function (_export) {
+System.register('matpompili/imgur-upload/main', ['flarum/extend', 'flarum/components/TextEditor', 'flarum/components/Button'], function (_export) {
   /*
-  * This file is part of flarum-img-upload.
+  * This file is part of imgur-upload.
   *
   * (c) Matteo Pompili <matpompili@gmail.com>
   *
   * For the full copyright and license information, please view the LICENSE
   * file that was distributed with this source code.
   */
-
-  //import Composer from 'flarum/components/Composer';
-
   'use strict';
 
   var extend, TextEditor, Button;
@@ -22,18 +19,19 @@ System.register('matpompili/image-upload/main', ['flarum/extend', 'flarum/compon
       Button = _flarumComponentsButton['default'];
     }],
     execute: function () {
-      app.initializers.add('matpompili-image-upload', function () {
+
+      app.initializers.add('matpompili-imgur-upload', function () {
         extend(TextEditor.prototype, 'controlItems', function (items) {
-          items.add('image-upload', m(
+          items.add('imgur-upload', m(
             'div',
-            { 'class': 'Button hasIcon image-upload-button' },
+            { 'class': 'Button hasIcon imgur-upload-button' },
             m('i', { 'class': 'icon fa fa-fw fa-paperclip Button-icon' }),
             m(
               'span',
               { 'class': 'Button-label' },
               'Allega'
             ),
-            m('input', { type: 'file', accept: 'image/*', id: 'image-upload-input', name: 'image-upload-input' })
+            m('input', { type: 'file', accept: 'image/*', id: 'imgur-upload-input', name: 'imgur-upload-input' })
           ));
 
           if (this.props.preview) {
@@ -48,13 +46,13 @@ System.register('matpompili/image-upload/main', ['flarum/extend', 'flarum/compon
 
         extend(TextEditor.prototype, 'init', function () {
           var textareaObj = this;
-          $("#composer").on("change", "#image-upload-input", function () {
+          $("#composer").on("change", "#imgur-upload-input", function () {
             var reader = new FileReader();
             reader.onload = function (e) {
               var data = e.target.result.substr(e.target.result.indexOf(",") + 1, e.target.result.length);
               //$("#image_preview").attr("src", e.target.result);
-              var icon = $(".image-upload-button > i");
-              var buttonText = $(".image-upload-button > span.Button-label");
+              var icon = $(".imgur-upload-button > i");
+              var buttonText = $(".imgur-upload-button > span.Button-label");
               var submitButton = $(".item-submit > button");
               icon.removeClass('fa-paperclip').addClass('fa-spin fa-circle-o-notch');
               buttonText.text("Caricando");
@@ -74,7 +72,7 @@ System.register('matpompili/image-upload/main', ['flarum/extend', 'flarum/compon
                   buttonText.text("Caricato!");
                   var linkString = '\n![alt text](' + response.data.link + ')\n';
                   textareaObj.insertAtCursor(linkString);
-                  $("#image-upload-input").val("");
+                  $("#imgur-upload-input").val("");
                   textareaObj.props.preview();
                   setTimeout(function () {
                     submitButton.attr("disabled", false);
@@ -93,7 +91,7 @@ System.register('matpompili/image-upload/main', ['flarum/extend', 'flarum/compon
                 }
               });
             };
-            reader.readAsDataURL($("#image-upload-input")[0].files[0]);
+            reader.readAsDataURL($("#imgur-upload-input")[0].files[0]);
           });
         });
       });

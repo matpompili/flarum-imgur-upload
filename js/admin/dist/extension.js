@@ -1,4 +1,12 @@
-System.register('matpompili/image-upload/components/ImageUploadSettingsModal', ['flarum/components/SettingsModal'], function (_export) {
+System.register('matpompili/imgur-upload/components/ImgurUploadSettingsModal', ['flarum/components/SettingsModal'], function (_export) {
+  /*
+  * This file is part of imgur-upload.
+  *
+  * (c) Matteo Pompili <matpompili@gmail.com>
+  *
+  * For the full copyright and license information, please view the LICENSE
+  * file that was distributed with this source code.
+  */
   'use strict';
 
   var SettingsModal, ImageUploadSettingsModal;
@@ -23,7 +31,7 @@ System.register('matpompili/image-upload/components/ImageUploadSettingsModal', [
         }, {
           key: 'title',
           value: function title() {
-            return 'Image Upload Settings';
+            return 'Imgur Upload Settings';
           }
         }, {
           key: 'form',
@@ -34,9 +42,9 @@ System.register('matpompili/image-upload/components/ImageUploadSettingsModal', [
               m(
                 'label',
                 null,
-                'Image Upload'
+                'Imgur Client ID'
               ),
-              m('input', { className: 'FormControl', bidi: this.setting('matpompili.image-upload.imgur') })
+              m('input', { className: 'FormControl', bidi: this.setting('matpompili.imgur-upload.clientID') })
             )];
           }
         }]);
@@ -47,32 +55,31 @@ System.register('matpompili/image-upload/components/ImageUploadSettingsModal', [
     }
   };
 });;
-System.register('matpompili/image-upload/main', ['flarum/extend', 'flarum/app', 'matpompili/image-upload/components/ImageUploadSettingsModal'], function (_export) {
+System.register('matpompili/imgur-upload/main', ['flarum/extend', 'flarum/app', 'matpompili/imgur-upload/components/ImgurUploadSettingsModal'], function (_export) {
   /*
-  * This file is part of flarum-img-upload.
+  * This file is part of imgur-upload.
   *
   * (c) Matteo Pompili <matpompili@gmail.com>
   *
   * For the full copyright and license information, please view the LICENSE
   * file that was distributed with this source code.
   */
-
   'use strict';
 
-  var extend, app, ImageUploadSettingsModal;
+  var extend, app, ImgurUploadSettingsModal;
   return {
     setters: [function (_flarumExtend) {
       extend = _flarumExtend.extend;
     }, function (_flarumApp) {
       app = _flarumApp['default'];
-    }, function (_matpompiliImageUploadComponentsImageUploadSettingsModal) {
-      ImageUploadSettingsModal = _matpompiliImageUploadComponentsImageUploadSettingsModal['default'];
+    }, function (_matpompiliImgurUploadComponentsImgurUploadSettingsModal) {
+      ImgurUploadSettingsModal = _matpompiliImgurUploadComponentsImgurUploadSettingsModal['default'];
     }],
     execute: function () {
 
-      app.initializers.add('matpompili-image-upload', function (app) {
-        app.extensionSettings['matpompili-image-upload'] = function () {
-          return app.modal.show(new ImageUploadSettingsModal());
+      app.initializers.add('matpompili-imgur-upload', function (app) {
+        app.extensionSettings['matpompili-imgur-upload'] = function () {
+          return app.modal.show(new ImgurUploadSettingsModal());
         };
       });
     }
