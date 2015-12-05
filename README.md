@@ -13,15 +13,15 @@ It uses the Markdown language to include images, so you can also copy the link f
 ## Install
 The easiest way to get flarum-imgur-upload is with composer: in your flarum folder run
   ```
-  composer require matpompili/flarum-imgur-upload
+  composer require matpompili/imgur-upload
   ```
 ### Other ways to install
 If you don't want to use composer, you can get the extension in one these two ways:
   1. Clone this repository in your `flarum/extensions` folder with
   ```
-  git clone https://github.com/matpompili/flarum-latex.git matpompili-latex
+  git clone https://github.com/matpompili/flarum-imgur-upload.git matpompili-imgur-upload
   ```
-  2. Download the latest version with the **Download ZIP** button on the top right of this page, and extract it in your `flarum/extensions`. Rename the extracted folder to `matpompili-latex`.
+  2. Download the latest version with the **Download ZIP** button on the top right of this page, and extract it in your `flarum/extensions`. Rename the extracted folder to `matpompili-imgur-upload`.
 
 ## Configuration
 Since **flarum-imgur-upload** uses Imgur API to upload your images, you will need an Imgur Client-ID. To get one simply register to the [Imgur](http://imgur.com/) website, and register an application. Once your application, which can be even your own website, has been registered, your Client-ID will be available. Simply put it in the configuration of the extension, in your admin page.
