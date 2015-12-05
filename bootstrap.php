@@ -9,7 +9,6 @@
 * file that was distributed with this source code.
 */
 
-use DirectoryIterator;
 use Flarum\Event\PrepareApiAttributes;
 use Flarum\Event\ConfigureLocales;
 use Flarum\Event\ConfigureClientView;
