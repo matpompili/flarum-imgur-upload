@@ -1,7 +1,7 @@
 {
     "name": "matpompili/imgur-upload",
     "description": "Enable the upload of images to imgur directly from the composer",
-    "version": "0.1.0",
+    "version": "v1.0.0-beta",
     "type": "flarum-extension",
     "license": "MIT",
     "authors": [

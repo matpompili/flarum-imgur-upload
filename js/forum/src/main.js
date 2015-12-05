@@ -15,7 +15,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
     items.add('imgur-upload', (
       <div class="Button hasIcon imgur-upload-button">
       <i class="icon fa fa-fw fa-paperclip Button-icon"></i>
-      <span class="Button-label">Allega</span>
+      <span class="Button-label">{app.translator.trans('matpompili-imgur-upload.forum.attach')}</span>
       <input type="file" accept="image/*" id="imgur-upload-input" name="imgur-upload-input"></input>
       </div>
     ));
@@ -37,17 +37,16 @@ app.initializers.add('matpompili-imgur-upload', function() {
       var reader = new FileReader();
       reader.onload = function(e) {
         var data = e.target.result.substr(e.target.result.indexOf(",") + 1, e.target.result.length);
-        //$("#image_preview").attr("src", e.target.result);
         var icon = $(".imgur-upload-button > i");
         var buttonText = $(".imgur-upload-button > span.Button-label");
         var submitButton = $(".item-submit > button");
         icon.removeClass('fa-paperclip').addClass('fa-spin fa-circle-o-notch');
-        buttonText.text("Caricando");
+        buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.loading')[0]);
         submitButton.attr("disabled", true);
         $.ajax({
           url: 'https://api.imgur.com/3/image',
           headers: {
-            'Authorization': 'Client-ID 44a018e98db7cfa'
+            'Authorization': 'Client-ID '+ app.forum.attribute('imgurClientID')
           },
           type: 'POST',
           data: {
@@ -56,7 +55,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
           },
           success: function(response) {
             icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-check green');
-            buttonText.text("Caricato!");
+            buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.loaded')[0]);
             var linkString = '\n![alt text]('+response.data.link+')\n';
             textareaObj.insertAtCursor(linkString);
             $("#imgur-upload-input").val("");
@@ -64,16 +63,16 @@ app.initializers.add('matpompili-imgur-upload', function() {
             setTimeout(function(){
               submitButton.attr("disabled", false);
               icon.removeClass('fa-check green').addClass('fa-paperclip');
-              buttonText.text("Allega");
+              buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.attach')[0]);
             },1000);
           }, error: function(response) {
             icon.removeClass('fa-spin fa-cog').addClass('fa-times red');
-            buttonText.text("Errore");
+            buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.error')[0]);
             console.log(response);
             setTimeout(function(){
               submitButton.attr("disabled", false);
               icon.removeClass('fa-times red').addClass('fa-paperclip');
-              buttonText.text("Allega");
+              buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.attach')[0]);
             },1000);
           }
         });
