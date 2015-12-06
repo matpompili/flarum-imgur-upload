@@ -72,7 +72,10 @@ System.register('matpompili/imgur-upload/main', ['flarum/extend', 'flarum/compon
                   var linkString = '\n![alt text](' + response.data.link + ')\n';
                   textareaObj.insertAtCursor(linkString);
                   $("#imgur-upload-input").val("");
-                  textareaObj.props.preview();
+                  if (typeof textareaObj.props.preview !== 'undefined') {
+                    // the variable is defined
+                    textareaObj.props.preview();
+                  }
                   setTimeout(function () {
                     submitButton.attr("disabled", false);
                     icon.removeClass('fa-check green').addClass('fa-paperclip');
