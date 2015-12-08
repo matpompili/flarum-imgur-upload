@@ -57,6 +57,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
             icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-check green');
             buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.loaded')[0]);
             var linkString = '\n![alt text]('+response.data.link+')\n';
+            linkString = linkString.replace('http:\\\\', 'https:\\\\');
             textareaObj.insertAtCursor(linkString);
             $("#imgur-upload-input").val("");
             if (typeof textareaObj.props.preview !== 'undefined') {
@@ -69,7 +70,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
               buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.attach')[0]);
             },1000);
           }, error: function(response) {
-            icon.removeClass('fa-spin fa-cog').addClass('fa-times red');
+            icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-times red');
             buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.error')[0]);
             console.log(response);
             setTimeout(function(){
