@@ -9,10 +9,10 @@
 * file that was distributed with this source code.
 */
 
+use Flarum\Api\Serializer\ForumSerializer;
 use Flarum\Event\PrepareApiAttributes;
 use Flarum\Event\ConfigureLocales;
 use Flarum\Event\ConfigureClientView;
-use Flarum\Api\Serializer\ForumSerializer;
 use Flarum\Settings\SettingsRepositoryInterface;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -56,7 +56,6 @@ class SettingsLoader {
   public function prepareApiAttributes(PrepareApiAttributes $event) {
     if ($event->isSerializer(ForumSerializer::class)) {
       $event->attributes['imgurClientID'] = $this->settings->get('matpompili.imgur-upload.clientID');
-      $event->attributes['test'] = 'prova';
     }
   }
 }
