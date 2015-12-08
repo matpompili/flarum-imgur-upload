@@ -50,7 +50,7 @@ System.register('matpompili/imgur-upload/main', ['flarum/extend', 'flarum/compon
         });
 
         /*
-        * This add a lister, with Jquery, to the Attach button. If a file is selected
+        * This add a listner, with Jquery, to the Attach button. If a file is selected
         * it gets upload with Imgur API. If the upload is a succes it displays the
         * link in the Composer, otherwise it print the error to the console and shows
         * an error on the Attach button. In any case it gets prepared for a new upload
