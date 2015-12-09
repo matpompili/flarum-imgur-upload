@@ -1,4 +1,7 @@
 matpompili-imgur-upload:
+  admin:
+    get-id: Obtenez un identifiant ici
+    without: Sans
   forum:
     attach: Ajouter une image
     loading: Envoi...
