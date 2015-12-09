@@ -76,7 +76,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
             icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-check green');
             buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.loaded')[0]);
             //Get the link to the uploaded image and put https instead of http
-            var linkString = '\n![alt text]('+response.data.link.replace('http:\\\\', 'https:\\\\')+')\n';
+            var linkString = '\n![alt text]('+response.data.link.replace('http:', 'https:')+')\n';
             //Place the Markdown image link in the Composer
             textAreaObj.insertAtCursor(linkString);
             $("#imgur-upload-input").val("");
