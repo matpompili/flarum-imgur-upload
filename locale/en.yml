@@ -1,0 +1,6 @@
+matpompili-imgur-upload:
+  forum:
+    attach: Attach
+    loading: Uploading...
+    loaded: Loaded!
+    error: Error
