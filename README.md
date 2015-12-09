@@ -1,5 +1,5 @@
 # flarum-imgur-upload
-**flarum-imgur-upload** is a [Flarum](https://github.com/flarum/flarum/) extension to support the upload of images to the popular website [Imgur](http://imgur.com/), and include the direct link of the image in the post.
+**flarum-imgur-upload** is a [Flarum](https://github.com/flarum/flarum/) extension to support the upload of images to the popular website [Imgur](https://imgur.com/), and include the direct link of the image in the post.
 
 >Flarum is a free, open-source forum software built with PHP and Mithril.js.
 
@@ -24,7 +24,11 @@ If you don't want to use composer, you can get the extension in one these two wa
   2. Download the latest version with the **Download ZIP** button on the top right of this page, and extract it in your `flarum/extensions`. Rename the extracted folder to `matpompili-imgur-upload`.
 
 ## Configuration
-Since **flarum-imgur-upload** uses Imgur API to upload your images, you will need an Imgur Client-ID. To get one simply register to the [Imgur](http://imgur.com/) website, and register an application. Once your application, which can be even your own website, has been registered, your Client-ID will be available. Simply put it in the configuration of the extension, in your admin page.
+Since **flarum-imgur-upload** uses Imgur API to upload your images, you will need an Imgur Client-ID. To get one simply register to the [Imgur](https://imgur.com/) website, and register an application [here](https://api.imgur.com/oauth2/addclient).
+You need to choose a name for your application (e.g. My Forum), and select *OAuth 2 authorization without a callback URL* (as shown below).
+![Imgur application configuration demo](https://i.imgur.com/WIcoUHW.png)
+
+Once your application, which can be even your own website, has been registered, your Client-ID will be available [here](https://imgur.com/account/settings/apps). Simply put it in the configuration of the extension, in your admin page.
 
 ## Usage
 While writing a post, or opening a new discussion, click on the *Attach* button. This will prompt the file chooser, if you're on a computer, or the gallery and/or camera if you're on mobile. After the image to upload has been selected, the uploading process will start (which may take some time, based on the image size and on connection quality). Once the process will be completed, the code to include the image will be automatically added in your composer. Have fun!

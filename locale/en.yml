@@ -1,4 +1,7 @@
 matpompili-imgur-upload:
+  admin:
+    get-id: Get one here
+    without: without
   forum:
     attach: Attach
     loading: Uploading...

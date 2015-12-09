@@ -42,7 +42,14 @@ System.register('matpompili/imgur-upload/components/ImgurUploadSettingsModal', [
               m(
                 'label',
                 null,
-                'Imgur Client ID'
+                'Imgur Client ID (OAuth ',
+                app.translator.trans('matpompili-imgur-upload.admin.without'),
+                ' callback) - ',
+                m(
+                  'a',
+                  { href: 'https://api.imgur.com/oauth2/addclient' },
+                  app.translator.trans('matpompili-imgur-upload.admin.get-id')
+                )
               ),
               m('input', { className: 'FormControl', bidi: this.setting('matpompili.imgur-upload.clientID') })
             )];

@@ -20,7 +20,7 @@ export default class ImageUploadSettingsModal extends SettingsModal {
   form() {
     return [
       <div className="Form-group">
-        <label>Imgur Client ID (OAuth without callback) - <a href="https://api.imgur.com/oauth2/addclient">Generate it here</a></label>
+        <label>Imgur Client ID (OAuth {app.translator.trans('matpompili-imgur-upload.admin.without')} callback) - <a href="https://api.imgur.com/oauth2/addclient">{app.translator.trans('matpompili-imgur-upload.admin.get-id')}</a></label>
         <input className="FormControl" bidi={this.setting('matpompili.imgur-upload.clientID')}/>
       </div>
     ];
