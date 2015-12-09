@@ -1,0 +1,6 @@
+matpompili-imgur-upload:
+  forum:
+    attach: Ajouter une image
+    loading: Envoi...
+    loaded: Terminé !
+    error: Erreur
