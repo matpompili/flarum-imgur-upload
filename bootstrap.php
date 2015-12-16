@@ -56,6 +56,8 @@ class SettingsLoader {
   public function prepareApiAttributes(PrepareApiAttributes $event) {
     if ($event->isSerializer(ForumSerializer::class)) {
       $event->attributes['imgurClientID'] = $this->settings->get('matpompili.imgur-upload.clientID');
+      $event->attributes['maxImageWidth'] = $this->settings->get('matpompili.imgur-upload.maxImageWidth');
+      $event->attributes['maxImageHeight'] = $this->settings->get('matpompili.imgur-upload.maxImageHeight');
     }
   }
 }

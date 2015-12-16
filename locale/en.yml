@@ -2,6 +2,9 @@ matpompili-imgur-upload:
   admin:
     get-id: Get one here
     without: without
+    leaveEmpty: Leave the following fields empty to disable image resizing
+    maxImageWidth: Max image width
+    maxImageHeight: Max image height
   forum:
     attach: Attach
     loading: Uploading...

@@ -48,10 +48,33 @@ System.register('matpompili/imgur-upload/components/ImgurUploadSettingsModal', [
                 m(
                   'a',
                   { href: 'https://api.imgur.com/oauth2/addclient' },
-                  app.translator.trans('matpompili-imgur-upload.admin.get-id')
+                  m(
+                    'small',
+                    null,
+                    app.translator.trans('matpompili-imgur-upload.admin.get-id')
+                  )
                 )
               ),
               m('input', { className: 'FormControl', bidi: this.setting('matpompili.imgur-upload.clientID') })
+            ), m(
+              'p',
+              null,
+              app.translator.trans('matpompili-imgur-upload.admin.leaveEmpty')
+            ), m(
+              'div',
+              { className: 'Form-group' },
+              m(
+                'label',
+                null,
+                app.translator.trans('matpompili-imgur-upload.admin.maxImageWidth')
+              ),
+              m('input', { className: 'FormControl', bidi: this.setting('matpompili.imgur-upload.maxImageWidth') }),
+              m(
+                'label',
+                null,
+                app.translator.trans('matpompili-imgur-upload.admin.maxImageHeight')
+              ),
+              m('input', { className: 'FormControl', bidi: this.setting('matpompili.imgur-upload.maxImageHeight') })
             )];
           }
         }]);
