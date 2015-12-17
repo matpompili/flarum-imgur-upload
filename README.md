@@ -11,17 +11,10 @@ With flarum-imgur-upload you can **attach** as many images as you want while wri
 It uses the Markdown language to include images, so you can also copy the link for other purposes.
 
 ## Install
-The easiest way to get flarum-imgur-upload is with composer: in your flarum folder run
+The only way to get flarum-imgur-upload is with composer: in your flarum folder run
   ```
   composer require matpompili/imgur-upload
   ```
-### Other ways to install
-If you don't want to use composer, you can get the extension in one these two ways:
-  1. Clone this repository in your `flarum/extensions` folder with
-  ```
-  git clone https://github.com/matpompili/flarum-imgur-upload.git matpompili-imgur-upload
-  ```
-  2. Download the latest version with the **Download ZIP** button on the top right of this page, and extract it in your `flarum/extensions`. Rename the extracted folder to `matpompili-imgur-upload`.
 
 ## Configuration
 Since **flarum-imgur-upload** uses Imgur API to upload your images, you will need an Imgur Client-ID. To get one simply register to the [Imgur](https://imgur.com/) website, and register an application [here](https://api.imgur.com/oauth2/addclient).
