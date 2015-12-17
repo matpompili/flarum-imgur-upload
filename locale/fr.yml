@@ -2,6 +2,9 @@ matpompili-imgur-upload:
   admin:
     get-id: Obtenez un identifiant ici
     without: sans
+    leaveEmpty: Laissez les champs suivant vides pour désactiver le redimensionnement automatique des images
+    maxImageWidth: Largeur maximale
+    maxImageHeight: Hauteur maximale
   forum:
     attach: Ajouter une image
     loading: Envoi...
