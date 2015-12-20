@@ -15,7 +15,7 @@ You can also choose to resize images down to a maximum size before upload, reduc
 ## Install
 The only way to get flarum-imgur-upload is with composer: in your flarum folder run
   ```
-  composer require matpompili/imgur-upload
+  composer require matpompili/flarum-imgur-upload
   ```
 
 ## Configuration
