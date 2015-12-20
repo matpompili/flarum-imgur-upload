@@ -37,6 +37,9 @@ class AddClientAssets {
     }
   }
 
+  /*
+  * Provides i18n files.
+  */
   public function addLocales(ConfigureLocales $event)
   {
     foreach (new DirectoryIterator(__DIR__.'/../../locale') as $file) {

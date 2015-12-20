@@ -24,7 +24,10 @@ class LoadSettingsFromDatabase {
   public function subscribe(Dispatcher $events) {
     $events->listen(PrepareApiAttributes::class, [$this, 'prepareApiAttributes']);
   }
-
+  /*
+  * Get the setting values from the database and make them available
+  * in the forum.
+  */
   public function prepareApiAttributes(PrepareApiAttributes $event) {
     if ($event->isSerializer(ForumSerializer::class)) {
       $event->attributes['imgurClientID'] = $this->settings->get('matpompili.imgur-upload.clientID');
