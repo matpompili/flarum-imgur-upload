@@ -11,8 +11,11 @@ System.register('matpompili/imgur-upload/main', ['flarum/extend', 'flarum/compon
 
   var extend, TextEditor, Button;
 
+  /*
+  * This function checks if x is a number
+  */
   function isNumber(x) {
-    return !isNaN && x == '';
+    return !(isNaN(x) || x == '');
   }
   return {
     setters: [function (_flarumExtend) {
@@ -66,6 +69,15 @@ System.register('matpompili/imgur-upload/main', ['flarum/extend', 'flarum/compon
           $("#composer").on("change", "#imgur-upload-input", function () {
             var reader = new FileReader();
             reader.onload = function (e) {
+              //Get the elements with jQuery to act on them later
+              var icon = $(".imgur-upload-button > i");
+              var buttonText = $(".imgur-upload-button > span.Button-label");
+              var submitButton = $(".item-submit > button");
+              //Show a loading icon and a loading text
+              icon.removeClass('fa-paperclip').addClass('fa-spin fa-circle-o-notch');
+              buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.loading')[0]);
+              //Disable the submit button until the upload is completed
+              submitButton.attr("disabled", true);
 
               // create an off-screen canvas and an Image object
               var canvas = document.createElement('canvas'),
@@ -80,8 +92,9 @@ System.register('matpompili/imgur-upload/main', ['flarum/extend', 'flarum/compon
                 var scale = 1;
                 if (isNumber(maxWidth) && isNumber(maxHeight)) {
                   scale = Math.min(maxWidth / img.width, maxHeight / img.height);
-                  scale = Math.max(scale, 1);
+                  scale = Math.min(scale, 1);
                 }
+
                 // set canvas' dimension to target size
                 canvas.width = img.width * scale;
                 canvas.height = img.height * scale;
@@ -94,15 +107,7 @@ System.register('matpompili/imgur-upload/main', ['flarum/extend', 'flarum/compon
 
                 //This formats the file for base64 upload
                 var data = resizedImage.substr(resizedImage.indexOf(",") + 1, resizedImage.length);
-                //Get the elements with jQuery to act on them later
-                var icon = $(".imgur-upload-button > i");
-                var buttonText = $(".imgur-upload-button > span.Button-label");
-                var submitButton = $(".item-submit > button");
-                //Show a loading icon and a loading text
-                icon.removeClass('fa-paperclip').addClass('fa-spin fa-circle-o-notch');
-                buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.loading')[0]);
-                //Disable the submit button until the upload is completed
-                submitButton.attr("disabled", true);
+                console.log('now we have the resizedImage');
                 //Actually upload the image
                 $.ajax({
                   url: 'https://api.imgur.com/3/image',
