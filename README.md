@@ -1,4 +1,5 @@
-# flarum-imgur-upload 2.0 (UNRELEASED)
+# flarum-imgur-upload v2 [![Packagist](https://img.shields.io/packagist/v/botfactoryit/flarum-imgur-upload.svg)](https://packagist.org/packages/botfactoryit/flarum-imgur-upload)
+
 **flarum-imgur-upload** is a [Flarum](https://github.com/flarum/flarum/) extension that allows posting images in Flarum posts using [Imgur](https://imgur.com/) for image hosting.
 
 ## Features
