@@ -1,4 +1,3 @@
-import { extend } from 'flarum/extend';
 import app from 'flarum/app';
 import ImgurUploadSettingsModal from 'botfactoryit/imgur-upload/components/ImgurUploadSettingsModal';
 
