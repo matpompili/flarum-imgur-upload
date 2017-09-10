@@ -1,12 +1,8 @@
 botfactoryit-imgur-upload:
   admin:
-    get-id: Get one here
-    without: without
-    leaveEmpty: Leave the following fields empty to disable image resizing
-    maxImageWidth: Max image width
-    maxImageHeight: Max image height
+    settings:
+        title: Imgur Upload settings
   forum:
-    attach: Attach
     loading: Uploading...
-    loaded: Loaded!
+    loaded: Done!
     error: Error

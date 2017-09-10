@@ -9,7 +9,7 @@ class LoadSettingsFromDatabase {
 	protected $settings;
 	
 	protected $toLoadSettings = [
-		'botfactoryit.flarum-imgur-upload.client_id'
+		'botfactoryit.imgur-upload.client_id'
 	];
 
 	public function __construct(SettingsRepositoryInterface $settings) {

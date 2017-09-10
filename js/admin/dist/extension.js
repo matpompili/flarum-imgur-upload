@@ -25,7 +25,7 @@ System.register('botfactoryit/imgur-upload/components/ImgurUploadSettingsModal',
 				}, {
 					key: 'title',
 					value: function title() {
-						return app.translator.trans('botfactory-imgur-upload.admin.settings.title');
+						return app.translator.trans('botfactoryit-imgur-upload.admin.settings.title');
 					}
 				}, {
 					key: 'form',
@@ -36,39 +36,9 @@ System.register('botfactoryit/imgur-upload/components/ImgurUploadSettingsModal',
 							m(
 								'label',
 								null,
-								'Imgur Client ID (OAuth ',
-								app.translator.trans('matpompili-imgur-upload.admin.without'),
-								' callback) - ',
-								m(
-									'a',
-									{ href: 'https://api.imgur.com/oauth2/addclient' },
-									m(
-										'small',
-										null,
-										app.translator.trans('matpompili-imgur-upload.admin.get-id')
-									)
-								)
+								'Imgur Client ID'
 							),
-							m('input', { className: 'FormControl', bidi: this.setting('matpompili.imgur-upload.clientID') })
-						), m(
-							'p',
-							null,
-							app.translator.trans('matpompili-imgur-upload.admin.leaveEmpty')
-						), m(
-							'div',
-							{ className: 'Form-group' },
-							m(
-								'label',
-								null,
-								app.translator.trans('matpompili-imgur-upload.admin.maxImageWidth')
-							),
-							m('input', { className: 'FormControl', bidi: this.setting('matpompili.imgur-upload.maxImageWidth') }),
-							m(
-								'label',
-								null,
-								app.translator.trans('matpompili-imgur-upload.admin.maxImageHeight')
-							),
-							m('input', { className: 'FormControl', bidi: this.setting('matpompili.imgur-upload.maxImageHeight') })
+							m('input', { className: 'FormControl', bidi: this.setting('botfactoryit.imgur-upload.client_id') })
 						)];
 					}
 				}]);

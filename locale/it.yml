@@ -1,12 +1,8 @@
 botfactoryit-imgur-upload:
   admin:
-      get-id: Creane uno qui
-      without: senza
-      leaveEmpty: Lascia i seguenti campi vuoti per disattivare il ridimensionamento delle immagini
-      maxImageWidth: Larghezza massima delle immagini
-      maxImageHeight: Altezza massima delle immagini
+    settings:
+        title: Impostazioni Imgur Upload
   forum:
-    attach: Allega
-    loading: Caricando...
-    loaded: Caricato!
+    loading: Caricamento...
+    loaded: Fatto!
     error: Errore
