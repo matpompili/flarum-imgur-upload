@@ -26,7 +26,7 @@ class LoadSettingsFromDatabase {
 	*/
 	public function prepareApiAttributes(PrepareApiAttributes $event) {
 		if ($event->isSerializer(ForumSerializer::class)) {
-			foreach ($toLoadSettings as $setting) {
+			foreach ($this->toLoadSettings as $setting) {
 				$event->attributes[$setting] = $this->settings->get($setting);
 			}
 		}

@@ -1,7 +1,7 @@
 <?php namespace BotFactory\ImgurUpload\Listeners;
 
 use DirectoryIterator;
-use Flarum\Event\ConfigureClientView;
+use Flarum\Event\ConfigureWebApp;
 use Flarum\Event\ConfigureLocales;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -11,21 +11,22 @@ class AddClientAssets {
 		$events->listen(ConfigureLocales::class, [$this, 'addLocales']);
 	}
 	
-	public function addAssets(ConfigureWebApp $event) {
-		if ($event->isForum()) {
-			$event->addAssets([
+	public function addAssets(ConfigureWebApp $app) {
+		if ($app->isForum()) {
+			$app->addAssets([
 				__DIR__ . '/../../css/forum/forum.css',
 				__DIR__ . '/../../js/forum/dist/extension.js',
 			]);
 			
-			$event->addBootstrapper('botfactoryit/imgur-upload/main');
+			$app->addBootstrapper('botfactoryit/imgur-upload/main');
 		}
 		
-		if ($event->isAdmin()) {
-			$event->addAssets([
-				__DIR__.'/../../js/admin/dist/extension.js',
+		if ($app->isAdmin()) {
+			$app->addAssets([
+				__DIR__ . '/../../js/admin/dist/extension.js',
 			]);
-			$event->addBootstrapper('botfactoryit/imgur-upload/main');
+			
+			$app->addBootstrapper('botfactoryit/imgur-upload/main');
 		}
 	}
 
