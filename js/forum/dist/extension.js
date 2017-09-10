@@ -108,11 +108,6 @@ System.register('botfactoryit/imgur-upload/main', ['flarum/extend', 'flarum/comp
 
 								$('#imgur-upload-input').val('');
 
-								if (_this.props.preview) {
-									// Show what we just uploaded
-									_this.props.preview();
-								}
-
 								// After 1 second, re-enable upload
 								setTimeout(function () {
 									//Enable the submit button

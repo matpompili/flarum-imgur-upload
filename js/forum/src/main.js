@@ -85,12 +85,7 @@ app.initializers.add('botfactoryit-imgur-upload', function() {
 					this.insertAtCursor(stringToInject);
 					
 					$('#imgur-upload-input').val('');
-					
-					if (this.props.preview) {
-						// Show what we just uploaded
-						this.props.preview();
-					}
-					
+										
 					// After 1 second, re-enable upload
 					setTimeout(() => {
 						//Enable the submit button

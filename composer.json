@@ -1,7 +1,7 @@
 {
     "name": "botfactoryit/flarum-imgur-upload",
     "description": "Upload images from Flarum to Imgur when composing posts",
-    "version": "v2.0.0",
+    "version": "v2.0.1",
     "type": "flarum-extension",
     "license": "GPL-3.0",
     "authors": [
