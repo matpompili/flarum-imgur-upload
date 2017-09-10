@@ -1,4 +1,4 @@
-<?php namespace Matpompili\Imgur\Upload\Listeners;
+<?php namespace BotFactory\ImgurUpload\Listeners;
 
 /*
 * This file is part of imgur-upload.

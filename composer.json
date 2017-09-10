@@ -1,17 +1,17 @@
 {
-    "name": "matpompili/flarum-imgur-upload",
-    "description": "Enable the upload of images to imgur directly from the composer",
-    "version": "v1.0.0",
+    "name": "botfactoryit/flarum-imgur-upload",
+    "description": "Upload images from Flarum to Imgur when composing posts",
+    "version": "v2.0.0",
     "type": "flarum-extension",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "authors": [
       {
-        "name": "Matteo Pompili",
-        "email": "matpompili@gmail.com"
+        "name": "Matteo Contrini",
+        "email": "m.contrini@gmail.com"
       }
     ],
     "require": {
-        "flarum/core": "^0.1.0-beta.3"
+        "flarum/core": "^0.1.0-beta.7"
     },
     "extra": {
         "flarum-extension": {
@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Matpompili\\Imgur\\Upload\\": "src/"
+            "BotFactory\\ImgurUpload\\": "src/"
         }
     }
 }
