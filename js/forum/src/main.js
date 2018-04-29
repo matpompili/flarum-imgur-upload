@@ -10,7 +10,7 @@ import { extend } from 'flarum/extend';
 import TextEditor from 'flarum/components/TextEditor';
 import Button from 'flarum/components/Button';
 
-app.initializers.add('matpompili-imgur-upload', function() {
+app.initializers.add('flarum-imgur-upload', function() {
   /*
   * This add the Attach button and move the preview button, if it is
   * there, to the end of the button list
@@ -20,7 +20,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
     items.add('imgur-upload', (
       <div class="Button hasIcon imgur-upload-button">
       <i class="icon fa fa-fw fa-paperclip Button-icon"></i>
-      <span class="Button-label">{app.translator.trans('matpompili-imgur-upload.forum.attach')}</span>
+      <span class="Button-label">{app.translator.trans('flarum-imgur-upload.forum.attach')}</span>
       <input type="file" accept="image/*" id="imgur-upload-input" name="imgur-upload-input"></input>
       </div>
     ));
@@ -55,7 +55,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
         var submitButton = $(".item-submit > button");
         //Show a loading icon and a loading text
         icon.removeClass('fa-paperclip').addClass('fa-spin fa-circle-o-notch');
-        buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.loading')[0]);
+        buttonText.text(app.translator.trans('flarum-imgur-upload.forum.loading')[0]);
         //Disable the submit button until the upload is completed
         submitButton.attr("disabled", true);
 
@@ -102,7 +102,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
             success: function(response) {
               //Remove the loading icon and text, and show the success
               icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-check green');
-              buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.loaded')[0]);
+              buttonText.text(app.translator.trans('flarum-imgur-upload.forum.loaded')[0]);
               //Get the link to the uploaded image and put https instead of http
               var linkString = '\n![alt text]('+response.data.link.replace('http:', 'https:')+')\n';
               //Place the Markdown image link in the Composer
@@ -119,12 +119,12 @@ app.initializers.add('matpompili-imgur-upload', function() {
                 submitButton.attr("disabled", false);
                 //Restore the Attach button and text for a new upload
                 icon.removeClass('fa-check green').addClass('fa-paperclip');
-                buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.attach')[0]);
+                buttonText.text(app.translator.trans('flarum-imgur-upload.forum.attach')[0]);
               },1000);
             }, error: function(response) {
               //Remove the loading icon and text, and show the error
               icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-times red');
-              buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.error')[0]);
+              buttonText.text(app.translator.trans('flarum-imgur-upload.forum.error')[0]);
               //Output the error to the console, for debug purposes
               console.log(response);
               //After 1sec
@@ -133,7 +133,7 @@ app.initializers.add('matpompili-imgur-upload', function() {
                 submitButton.attr("disabled", false);
                 //Restore the Attach button and text for a new upload
                 icon.removeClass('fa-times red').addClass('fa-paperclip');
-                buttonText.text(app.translator.trans('matpompili-imgur-upload.forum.attach')[0]);
+                buttonText.text(app.translator.trans('flarum-imgur-upload.forum.attach')[0]);
               },1000);
             }
           });
