@@ -1,6 +1,5 @@
 import { extend } from 'flarum/extend';
 import TextEditor from 'flarum/components/TextEditor';
-import Button from 'flarum/components/Button';
 
 app.initializers.add('botfactoryit-imgur-upload', function() {
 	/*
@@ -9,19 +8,11 @@ app.initializers.add('botfactoryit-imgur-upload', function() {
 	extend(TextEditor.prototype, 'controlItems', function(items) {
 		items.add('imgur-upload', (
 			<div class="Button hasIcon imgur-upload-button">
-				<i class="icon fa fa-fw fa-picture-o Button-icon"></i>
+				<i class="icon far fa-image Button-icon"></i>
 				<span class="Button-label"></span>
 				<input type="file" accept="image/*" id="imgur-upload-input" name="imgur-upload-input"></input>
 			</div>
 		));
-		
-		// If we are editing a post, the preview method is defined
-		if (this.props.preview) {
-			// Remove preview button, and add it to the end (it just looks nicer)
-			let previewButton = items.get('preview');
-			items.remove('preview');
-			items.add('preview', previewButton);
-		};
 	});
 
 	/*
@@ -40,7 +31,7 @@ app.initializers.add('botfactoryit-imgur-upload', function() {
 			let submitButton = $('.item-submit > button');
 			
 			// Show a loading icon and a loading text
-			icon.removeClass('fa-picture-o').addClass('fa-spin fa-circle-o-notch');
+			icon.removeClass('far fa-image').addClass('fas fa-spin fa-circle-notch');
 			buttonText.text(app.translator.trans('botfactoryit-imgur-upload.forum.loading')[0]);
 			buttonDiv.addClass('loading');
 			
@@ -64,7 +55,7 @@ app.initializers.add('botfactoryit-imgur-upload', function() {
 				processData: false,
 				success: (response) => {
 					// Remove the loading icon and text, and show the success
-					icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-check green');
+					icon.removeClass('fa-spin fa-circle-notch').addClass('fa-check green');
 					buttonText.text(app.translator.trans('botfactoryit-imgur-upload.forum.loaded')[0]);
 					
 					// Get the link to the uploaded image and put https instead of http
@@ -92,7 +83,7 @@ app.initializers.add('botfactoryit-imgur-upload', function() {
 						submitButton.attr('disabled', false);
 						
 						// Restore the Attach button for a new upload
-						icon.removeClass('fa-check green').addClass('fa-picture-o');
+						icon.removeClass('fas fa-check green').addClass('far fa-image');
 						buttonDiv.removeClass('loading');
 						
 						buttonText.text('');
@@ -100,7 +91,7 @@ app.initializers.add('botfactoryit-imgur-upload', function() {
 				},
 				error: (response) => {
 					// Remove the loading icon and text, and show the error
-					icon.removeClass('fa-spin fa-circle-o-notch').addClass('fa-times red');
+					icon.removeClass('fas fa-spin fa-circle-notch').addClass('far fa-times red');
 					buttonText.text(app.translator.trans('botfactoryit-imgur-upload.forum.error')[0]);
 					buttonDiv.removeClass('loading');
 					
@@ -112,7 +103,7 @@ app.initializers.add('botfactoryit-imgur-upload', function() {
 						submitButton.attr('disabled', false);
 						
 						// Restore the Attach button for a new upload
-						icon.removeClass('fa-times red').addClass('fa-picture-o');
+						icon.removeClass('fa-times red').addClass('fa-image');
 						buttonDiv.removeClass('loading');
 						
 						buttonText.text('');

@@ -1,7 +1,7 @@
 {
     "name": "botfactoryit/flarum-imgur-upload",
     "description": "Upload images from Flarum to Imgur when composing posts",
-    "version": "v2.0.1",
+    "version": "v3.0.0",
     "type": "flarum-extension",
     "license": "GPL-3.0",
     "authors": [
@@ -11,13 +11,13 @@
       }
     ],
     "require": {
-        "flarum/core": "^0.1.0-beta.7"
+        "flarum/core": "^0.1.0-beta.8"
     },
     "extra": {
         "flarum-extension": {
             "title": "Imgur Upload",
             "icon": {
-                "name": "upload",
+                "name": "fas fa-upload",
                 "backgroundColor": "#000",
                 "color": "#87d37c"
             }
