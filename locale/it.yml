@@ -3,7 +3,7 @@ imgur-upload:
     settings:
         title: Impostazioni Imgur Upload
   forum:
-    upload: Carica immagine
+    upload: Premi o incolla per caricare
     loading: Caricamento...
     done: Fatto!
     error: Errore

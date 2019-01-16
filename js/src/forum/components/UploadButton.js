@@ -7,6 +7,8 @@ export default class UploadButton extends Component {
         this.isLoading = false;
         this.isSuccess = false;
         this.isError = false;
+        
+        document.addEventListener('paste', this.paste.bind(this));
     }
     
     view() {
@@ -42,7 +44,7 @@ export default class UploadButton extends Component {
                     m('input', {
                         type: 'file',
                         accept: 'image/*',
-                        onchange: this.upload.bind(this),
+                        onchange: this.formUpload.bind(this),
                         // disable button while doing things
                         disabled: this.isLoading || this.isSuccess || this.isError
                     })
@@ -51,9 +53,27 @@ export default class UploadButton extends Component {
         );
     }
     
-    upload(e) {
-        let file = $(e.target)[0].files[0];
+    paste(e) {
+        if (this.isLoading) return;
+        
+        if (e.clipboardData && e.clipboardData.items) {
+            let item = e.clipboardData.items[0];
 
+            if (!item.type.startsWith('image')) {
+                return;
+            }
+
+            let file = item.getAsFile();
+            this.upload(file);
+        }
+    }
+    
+    formUpload(e) {
+        let file = $(e.target)[0].files[0];
+        this.upload(file);
+    }
+    
+    upload(file) {
         $(this.domElement).tooltip('hide'); // force removal of the tooltip
         this.isLoading = true;
         m.redraw();
