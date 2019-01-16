@@ -92,12 +92,7 @@ export default class UploadButton extends Component {
             previewLink = previewLink.slice(0, extensionIndex) + 'h' + previewLink.slice(extensionIndex);
         }
 
-        let stringToInject = '';
-        stringToInject += '[URL=' + imageLink + ']';
-        stringToInject += '[IMG]' + previewLink + '[/IMG]';
-        stringToInject += '[/URL]'
-        stringToInject += '\n\n';
-
+        let stringToInject = `[![](${previewLink})](${imageLink})\n`;
         this.props.textArea.insertAtCursor(stringToInject);
 
         // After a bit, re-enable upload
