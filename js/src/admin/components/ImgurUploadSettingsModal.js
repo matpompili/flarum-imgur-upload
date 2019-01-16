@@ -6,14 +6,14 @@ export default class ImgurUploadSettingsModal extends SettingsModal {
 	}
 
 	title() {
-		return app.translator.trans('botfactoryit-imgur-upload.admin.settings.title');
+		return app.translator.trans('imgur-upload.admin.settings.title');
 	}
 
 	form() {
 		return [
 			<div className="Form-group">
 				<label>Imgur Client ID</label>
-				<input className="FormControl" bidi={this.setting('botfactoryit.imgur-upload.client_id')}/>
+				<input className="FormControl" bidi={this.setting('imgur-upload.client-id')}/>
 			</div>
 		];
 	}

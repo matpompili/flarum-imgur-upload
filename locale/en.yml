@@ -1,8 +1,9 @@
-botfactoryit-imgur-upload:
+imgur-upload:
   admin:
     settings:
         title: Imgur Upload settings
   forum:
+    upload: Upload image
     loading: Uploading...
-    loaded: Done!
+    done: Done!
     error: Error

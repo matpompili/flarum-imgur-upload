@@ -1,12 +1,6 @@
 .imgur-upload-button {
 	overflow: hidden;
 	position: relative;
-	width: 36px;
-	padding: 8px 0;
-}
-
-.imgur-upload-button .Button-icon {
-	margin-right: 0;
 }
 
 .imgur-upload-button input {
@@ -18,24 +12,18 @@
 	font-size: 20px;
 	cursor: pointer;
 	opacity: 0;
+	filter: alpha(opacity=0);
+	width: 100%;
 	height: 100%;
 }
 
-.imgur-upload-button.loading {
-	width: auto;
+.imgur-upload-button .LoadingIndicator {
+	display: inline;
+	margin: 0 12px 0 2px;
 }
 
-.imgur-upload-button.loading .Button-icon {
-	margin: 0 7px;
-}
-
-.imgur-upload-button.loading .Button-label {
-	margin-right: 7px;
-}
-
-.fa-spin {
-	-webkit-animation: fa-spin 2s infinite linear;
-	animation: fa-spin 2s infinite linear;
+.imgur-upload-button .LoadingIndicator .spinner {
+	transform: scale(0.7) !important;
 }
 
 .green {
@@ -44,26 +32,4 @@
 
 .red {
 	color: rgb(242, 38, 19) !important;
-}
-
-@-webkit-keyframes fa-spin {
-	0% {
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
-	100% {
-		-webkit-transform: rotate(359deg);
-		transform: rotate(359deg);
-	}
-}
-
-@keyframes fa-spin {
-	0% {
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
-	100% {
-		-webkit-transform: rotate(359deg);
-		transform: rotate(359deg);
-	}
 }

@@ -11,7 +11,7 @@ use Flarum\Settings\SettingsRepositoryInterface;
 class LoadSettingsFromDatabase
 {
     protected $addSettings = [
-        'client_id'
+        'client-id'
     ];
     /**
      * Gets the settings variable. Called on Object creation.
@@ -49,6 +49,6 @@ class LoadSettingsFromDatabase
     }
     protected function prefix($key)
     {
-        return "botfactoryit.imgur-upload.$key";
+        return "imgur-upload.$key";
     }
 }
