@@ -1,6 +1,6 @@
 {
     "private": true,
-    "name": "@botfactoryit/flarum-italian",
+    "name": "@matteocontrini/flarum-imgur-upload",
     "dependencies": {
         "flarum-webpack-config": "0.1.0-beta.10",
         "webpack": "^4.0.0",

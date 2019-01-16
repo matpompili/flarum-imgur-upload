@@ -1,6 +1,6 @@
 <?php
 
-namespace BotFactory\ImgurUpload;
+namespace ImgurUpload;
 
 use Flarum\Extend;
 use Flarum\Frontend\Document;

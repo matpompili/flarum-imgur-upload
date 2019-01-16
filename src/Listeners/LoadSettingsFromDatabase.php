@@ -1,6 +1,6 @@
 <?php
 
-namespace BotFactory\ImgurUpload\Listeners;
+namespace ImgurUpload\Listeners;
 
 use Flarum\Api\Event\Serializing;
 use Flarum\Api\Serializer\ForumSerializer;

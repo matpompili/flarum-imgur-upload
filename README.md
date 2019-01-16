@@ -1,9 +1,9 @@
-# flarum-imgur-upload v3 [![Packagist](https://img.shields.io/packagist/v/botfactoryit/flarum-imgur-upload.svg)](https://packagist.org/packages/botfactoryit/flarum-imgur-upload)
+# flarum-imgur-upload v3 [![Packagist](https://img.shields.io/packagist/v/matteocontrini/flarum-imgur-upload.svg)](https://packagist.org/packages/matteocontrini/flarum-imgur-upload)
 
 **flarum-imgur-upload** is a [Flarum](https://github.com/flarum/flarum/) extension that allows posting images in Flarum posts using [Imgur](https://imgur.com/) for image hosting.
 
 ## Features
-With flarum-imgur-upload you can **attach** as many images as you want while writing your post, and the extension will automatically embed the images in your post.
+With flarum-imgur-upload you can upload images to Imgur while writing your post, and the extension will automatically embed the images in your post. You can also paste from clipboard to upload an image file.
 
 Opposed to [flagrow/upload](https://github.com/flagrow/upload), this extension:
 
@@ -16,11 +16,12 @@ Opposed to [flagrow/upload](https://github.com/flagrow/upload), this extension:
 Compared to the extension this repository has been forked from, this extension:
 
 - doesn't resize/change orientation of images. The raw file is uploaded to Imgur
+- supports paste from clipboard
 
 ## Install
 
 ```
-composer require botfactoryit/flarum-imgur-upload
+composer require matteocontrini/flarum-imgur-upload
 ```
 
 ## Configuration
@@ -30,4 +31,6 @@ You need to choose a name for your application (e.g. My Forum), and select *OAut
 Once your application has been registered, your Client ID will be available [here](https://imgur.com/account/settings/apps). Simply put it in the configuration of the extension, in your admin page.
 
 ## Usage
-When writing/editing a post click on the *Attach* button.
+When writing/editing a post click on the image button.
+
+![DemoGIF](https://i.imgur.com/WtqxH4E.gif)
