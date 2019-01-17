@@ -13,10 +13,13 @@ Opposed to [flagrow/upload](https://github.com/flagrow/upload), this extension:
 - uploads the image using only client-side code (without using server/bandwidth resources)
 - allows you to stop using the extension whenever you want. Previously uploaded images will stay there forever
 
-Compared to the extension this repository has been forked from, this extension:
+Compared to the original extension (matpompili/flarum-imgur-uplad), this extension:
 
 - doesn't resize/change orientation of images. The raw file is uploaded to Imgur
 - supports paste from clipboard
+- has been rewritten to use Flarum components
+- supports beta 8
+- has a more polished UI
 
 ## Install
 
