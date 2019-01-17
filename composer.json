@@ -1,7 +1,7 @@
 {
     "name": "matteocontrini/flarum-imgur-upload",
     "description": "Simple image upload from Flarum",
-    "version": "v3.0.0",
+    "version": "v3.1.0",
     "type": "flarum-extension",
     "license": "GPL-3.0",
     "authors": [
