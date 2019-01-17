@@ -5,15 +5,7 @@
 ## Features
 With flarum-imgur-upload you can upload images to Imgur while writing your post, and the extension will automatically embed the images in your post. You can also paste from clipboard to upload an image file.
 
-Opposed to [flagrow/upload](https://github.com/flagrow/upload), this extension:
-
-- doesn't touch your database
-- uses Markdown for including images
-- doesn't wrap the image in a frame, nor does it crop the image
-- uploads the image using only client-side code (without using server/bandwidth resources)
-- allows you to stop using the extension whenever you want. Previously uploaded images will stay there forever
-
-Compared to the original extension (matpompili/flarum-imgur-uplad), this extension:
+Compared to the original extension (matpompili/flarum-imgur-upload), this extension:
 
 - doesn't resize/change orientation of images. The raw file is uploaded to Imgur
 - supports paste from clipboard
@@ -27,7 +19,10 @@ Compared to the original extension (matpompili/flarum-imgur-uplad), this extensi
 composer require matteocontrini/flarum-imgur-upload
 ```
 
+If you previously used `matpompili/flarum-imgur-upload` (the original work on this extension by Matteo Pompili) or `botfactoryit/flarum-imgur-upload`, you should disable and remove those extensions when you upgrade to beta 8.
+
 ## Configuration
+
 Since **flarum-imgur-upload** uses Imgur API to upload your images, you will need an Imgur Client ID. To get one simply register to the [Imgur](https://imgur.com/) website, and register an application [here](https://api.imgur.com/oauth2/addclient).
 You need to choose a name for your application (e.g. My Forum), and select *OAuth 2 authorization without a callback URL*.
 
@@ -37,3 +32,7 @@ Once your application has been registered, your Client ID will be available [her
 When writing/editing a post click on the image button.
 
 ![DemoGIF](https://i.imgur.com/WtqxH4E.gif)
+
+## Credits
+
+The original work for this extension was done by @matpompili.

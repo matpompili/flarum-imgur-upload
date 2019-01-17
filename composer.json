@@ -1,6 +1,6 @@
 {
     "name": "matteocontrini/flarum-imgur-upload",
-    "description": "Upload images from Flarum to Imgur when composing messages",
+    "description": "Simple image upload from Flarum",
     "version": "v3.0.0",
     "type": "flarum-extension",
     "license": "GPL-3.0",
@@ -8,6 +8,10 @@
       {
         "name": "Matteo Contrini",
         "email": "matteo@contrini.it"
+      },
+      {
+        "name": "Matteo Pompili",
+        "email": "matpompili@gmail.com"
       }
     ],
     "require": {
