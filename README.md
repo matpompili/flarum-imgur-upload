@@ -13,6 +13,8 @@ Compared to the original extension (matpompili/flarum-imgur-upload), this extens
 - supports beta 8
 - has a more polished UI
 
+![Demo GIF](https://i.imgur.com/WtqxH4E.gif)
+
 ## Install
 
 ```
@@ -27,11 +29,6 @@ Since **flarum-imgur-upload** uses Imgur API to upload your images, you will nee
 You need to choose a name for your application (e.g. My Forum), and select *OAuth 2 authorization without a callback URL*.
 
 Once your application has been registered, your Client ID will be available [here](https://imgur.com/account/settings/apps). Simply put it in the configuration of the extension, in your admin page.
-
-## Usage
-When writing/editing a post click on the image button.
-
-![DemoGIF](https://i.imgur.com/WtqxH4E.gif)
 
 ## Credits
 
