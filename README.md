@@ -13,7 +13,7 @@ Compared to the original extension (matpompili/flarum-imgur-upload), this extens
 - supports beta 8
 - has a more polished UI
 
-![Demo GIF](https://i.imgur.com/WtqxH4E.gif)
+![Demo GIF](https://i.imgur.com/46VYGzz.gif)
 
 ## Installation
 
