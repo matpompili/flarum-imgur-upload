@@ -15,7 +15,7 @@ Compared to the original extension (matpompili/flarum-imgur-upload), this extens
 
 ![Demo GIF](https://i.imgur.com/WtqxH4E.gif)
 
-## Install
+## Installation
 
 ```
 composer require matteocontrini/flarum-imgur-upload
@@ -26,9 +26,9 @@ If you previously used `matpompili/flarum-imgur-upload` (the original work on th
 ## Configuration
 
 Since **flarum-imgur-upload** uses Imgur API to upload your images, you will need an Imgur Client ID. To get one simply register to the [Imgur](https://imgur.com/) website, and register an application [here](https://api.imgur.com/oauth2/addclient).
-You need to choose a name for your application (e.g. My Forum), and select *OAuth 2 authorization without a callback URL*.
+You need to choose a name for your application (e.g. My Forum), and select *Anonymous usage without user authorization*. If the form requires you to set an *Authorization callback URL*, that's a bug. Select *OAuth 2 authorization without a callback URL* to avoid that, or play with the radio buttons a bit.
 
-Once your application has been registered, your Client ID will be available [here](https://imgur.com/account/settings/apps). Simply put it in the configuration of the extension, in your admin page.
+Once your application has been registered, your Client ID will be available [here](https://imgur.com/account/settings/apps). Put it in the configuration of the extension, in your admin page.
 
 ## Credits
 
