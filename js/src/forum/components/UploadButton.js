@@ -3,12 +3,20 @@ import icon from 'flarum/helpers/icon';
 import LoadingIndicator from 'flarum/components/LoadingIndicator';
 
 export default class UploadButton extends Component {
-    init() {
+    oncreate(vnode) {
+        super.oncreate(vnode);
+
         this.isLoading = false;
         this.isSuccess = false;
         this.isError = false;
-        
-        document.addEventListener('paste', this.paste.bind(this));
+        this.isPasteListenerAttached = false;
+    }
+
+    onupdate(vnode) {
+        if (!this.isPasteListenerAttached) {
+            this.isPasteListenerAttached = true;
+            this.attrs.textArea.el.addEventListener('paste', this.paste.bind(this));
+        }
     }
     
     view() {
