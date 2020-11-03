@@ -1,12 +1,9 @@
-matpompili-imgur-upload:
+imgur-upload:
   admin:
-    get-id: Получить
-    without: без
-    leaveEmpty: Если Вы не хотите изменять размер изображения, оставьте эти поля пустыми
-    maxImageWidth: Максимальная ширина изображения
-    maxImageHeight: Максимальная высота изображения
+    settings:
+        title: Imgur настройка загрузки
   forum:
-    attach: Прикрепить
+    upload: Загрузить изображение
     loading: Загрузка...
-    loaded: Загружено!
+    done: Готово!
     error: Ошибка
