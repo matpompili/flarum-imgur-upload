@@ -14,5 +14,7 @@ return [
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
     new Extend\Locales(__DIR__.'/locale'),
-    (new Extend\Event)->listen(Serializing::class, SettingsLoaderListener::class)
+    (new Extend\Settings)
+        ->serializeToForum('imgur-upload.client-id', 'imgur-upload.client-id')
+        ->serializeToForum('imgur-upload.hide-markdown-image', 'imgur-upload.hide-markdown-image')
 ];
