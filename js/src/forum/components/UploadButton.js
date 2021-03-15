@@ -1,6 +1,7 @@
-import Component from 'flarum/Component';
-import icon from 'flarum/helpers/icon';
-import LoadingIndicator from 'flarum/components/LoadingIndicator';
+import app from 'flarum/app';
+import Component from 'flarum/common/Component';
+import icon from 'flarum/common/helpers/icon';
+import LoadingIndicator from 'flarum/common/components/LoadingIndicator';
 
 export default class UploadButton extends Component {
     oncreate(vnode) {
@@ -40,7 +41,7 @@ export default class UploadButton extends Component {
         else if (this.isError) label = app.translator.trans('imgur-upload.forum.error');
         
         // When there is no label, the component element should be shown as a square button
-        if (label == '') {
+        if (label === '') {
             attrs.className += ' Button--icon';
         }
         
@@ -125,13 +126,13 @@ export default class UploadButton extends Component {
         let previewUrl = (isLarge ? this.previewUrl(imageUrl) : imageUrl);
         let embedType = app.forum.attribute('imgur-upload.embed-type');
 
-        if (embedType == 'full-with-link') {
+        if (embedType === 'full-with-link') {
             return `[URL=${imageUrl}][IMG]${imageUrl}[/IMG][/URL]\n`;
         }
-        else if (embedType == 'full-without-link') {
+        else if (embedType === 'full-without-link') {
             return `[IMG]${imageUrl}[/IMG]\n`;
         }
-        else if (embedType == 'preview-without-link') {
+        else if (embedType === 'preview-without-link') {
             return `[IMG]${previewUrl}[/IMG]\n`;
         }
         else {
