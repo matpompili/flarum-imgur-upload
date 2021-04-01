@@ -14,7 +14,6 @@ export default class UploadButton extends Component {
         this.isPasteListenerAttached = false;
     }
 
-
     oncreate(vnode) {
         super.oncreate(vnode);
 
@@ -22,7 +21,7 @@ export default class UploadButton extends Component {
     }
 
     onupdate(vnode) {
-        if (!this.isPasteListenerAttached) {
+        if (!this.isPasteListenerAttached && app.forum.attribute('imgur-upload.allow-paste') === '1') {
             this.isPasteListenerAttached = true;
             this.attrs.textArea.addEventListener('paste', this.paste.bind(this));
         }
